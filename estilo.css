@@ -1,0 +1,174 @@
+:root {
+    --azul: #2563eb;
+    --azul-escuro: #1d4ed8;
+    --cinza-fundo: #f4f6fb;
+    --cinza-borda: #e2e8f0;
+    --texto: #1e293b;
+    --texto-suave: #64748b;
+    --verde: #16a34a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--cinza-fundo);
+    color: var(--texto);
+    margin: 0;
+    padding: 40px 16px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 560px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: var(--texto-suave);
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.card {
+    background: #ffffff;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 16px;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    color: var(--texto-suave);
+    margin-bottom: 4px;
+    margin-top: 14px;
+}
+
+label:first-of-type {
+    margin-top: 0;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--cinza-borda);
+    border-radius: 8px;
+    font-size: 14px;
+    background: #f8fafc;
+    transition: border-color 0.15s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--azul);
+    background: #fff;
+}
+
+.regioes {
+    font-size: 12px;
+    color: var(--texto-suave);
+    background: #f8fafc;
+    border: 1px dashed var(--cinza-borda);
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-top: 6px;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#btnAdicionar {
+    background: var(--azul);
+    color: #fff;
+}
+
+#btnRelatorio {
+    background: var(--verde);
+    color: #fff;
+}
+
+#listaPedidos {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+#listaPedidos li {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--cinza-borda);
+    font-size: 14px;
+}
+
+#listaPedidos li:last-child {
+    border-bottom: none;
+}
+
+#listaPedidos:empty::before {
+    content: "Nenhum pedido cadastrado ainda.";
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+#textoResultado {
+    font-size: 14px;
+}
+
+#textoResultado h3 {
+    color: var(--azul-escuro);
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+#textoResultado p {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--cinza-borda);
+    margin: 0;
+}
+
+#textoResultado p span {
+    color: var(--texto-suave);
+}
