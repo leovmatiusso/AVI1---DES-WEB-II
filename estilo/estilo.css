@@ -9,6 +9,8 @@
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -16,10 +18,56 @@ body {
     font-family: 'Segoe UI', Arial, sans-serif;
     background: var(--cinza-fundo);
     color: var(--texto);
-    margin: 0;
-    padding: 40px 16px;
+    min-height: 100vh;
+}
+
+/* Ajuste da Barra de Navegação Superior */
+.navbar {
+    width: 100%;
+    background-color: #1a252f; /* Azul escuro elegante */
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Centraliza a lista de exercícios */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* Caso a tela encolha muito, os itens quebram linha */
+    justify-content: center;
+}
+
+.nav-links a {
+    color: #bdc3c7; /* Cor cinza clara para links inativos */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+/* Efeito Hover (Passar o mouse) */
+.nav-links a:hover {
+    color: #ffffff;
+    background-color: #34495e; /* Fundo levemente mais claro */
+}
+
+.nav-links a.active {
+    color: #ffffff;
+    background-color: var(--azul); /* Fundo azul destacado igual o botão */
+}
+
+/* Container do Conteúdo Principal */
+.content-wrapper {
     display: flex;
     justify-content: center;
+    padding: 40px 16px;
 }
 
 .container {
@@ -29,14 +77,8 @@ body {
 
 h2 {
     text-align: center;
-    margin-bottom: 4px;
-}
-
-.subtitulo {
-    text-align: center;
-    color: var(--texto-suave);
     margin-bottom: 24px;
-    font-size: 14px;
+    font-size: 22px;
 }
 
 .card {
@@ -50,18 +92,20 @@ h2 {
 
 .card h3 {
     margin-top: 0;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--texto-suave);
     text-transform: uppercase;
     letter-spacing: 0.04em;
+    margin-bottom: 16px;
 }
 
 label {
     display: block;
     font-size: 13px;
     color: var(--texto-suave);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     margin-top: 14px;
+    font-weight: 500;
 }
 
 label:first-of-type {
@@ -97,7 +141,7 @@ input:focus {
 .botoes {
     display: flex;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 24px;
 }
 
 button {

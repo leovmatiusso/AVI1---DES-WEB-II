@@ -18,7 +18,19 @@ function calcularRes() {
     let rasty = Number(rast.value);
     let litrox = Number(litro.value);
 
-    // 3. Faz o cálculo
+    // 3. Verifica se o código já existe na lista
+    let codigoValido = 0
+    while (codigoValido==0){
+        let existe = pedidosLista.some(p => p.codigo == codigox)
+        if (existe){
+            let novoCodigo = prompt('Esse código já foi usado! Digite outro código:')
+            codigox = Number(novoCodigo)
+        } else {
+            codigoValido = 1
+        }
+    }
+
+    // 4. Faz o cálculo
     let preco=0
     let valida = 0
     while (valida==0){
@@ -36,10 +48,8 @@ function calcularRes() {
                 valida = 1
                 break;
             default:
-                regiaox = prompt('Valor inválido! Digite 1, 2 ou 3:')
-                if (regiaox == 1 || regiaox ==2 || regiaox == 3){
-                    valida = 1
-                }
+                let novaRegiao = prompt('DIGITE UM NUMERO CORRESPONDENTE (1, 2 ou 3)')
+                regiaox = Number(novaRegiao)
         }
     }
     
@@ -52,22 +62,20 @@ function calcularRes() {
     // CORREÇÃO: excedente é um DESCONTO, então precisa ser subtraído, não somado
     let total = preco - excedente + gasolina
 
-    while (valida == 1) {
+    let rastValido = 0
+    while (rastValido==0){
         switch (rasty){
             case 1:
                 total += 200
-                valida = 2
+                rastValido = 1
                 break;
             case 2:
                 total = total
-                valida = 2
+                rastValido = 1
                 break;
             default:
-                rasty = prompt('Valor inválido! Digite 1 ou 2:')
-                if (rasty == 1 || rasty == 2){
-                    valida = 2
-                }
-
+                let novoRast = prompt('DIGITE UM NUMERO CORRESPONDENTE (1 ou 2)')
+                rasty = Number(novoRast)
         }
     }
 

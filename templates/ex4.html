@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Frete - Múltiplos Pedidos</title>
+    <link rel="stylesheet" href="../estilo/estilo.css">
+    <script src="../script/script.js" defer></script>
+</head>
+
+<body>
+    <!-- Menu Superior Corrigido -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="index.html">Exercício 1</a></li>
+            <li><a href="ex2.html">Exercício 2</a></li>
+            <li><a href="ex3.html">Exercício 3</a></li>
+            <li><a href="ex4.html" class="active">Exercício 4</a></li>
+            <li><a href="ex5.html">Exercício 5</a></li>
+            <li><a href="ex6.html">Exercício 6</a></li>
+        </ul>
+    </nav>
+
+    <main class="content-wrapper">
+        <div class="container">
+            <h2>Exercício 04 - Sistema de Reservas de Hotel com Tarifas Dinâmicas</h2>
+            <div class="card">
+                <h3>Novo pedido</h3>
+
+                <label for="codigo">Código do pedido</label>
+                <input type="number" id="codigo" placeholder="Ex: 1001">
+
+                <label for="regiao">Região</label>
+                <input type="number" id="regiao" placeholder="Digite o número correspondente">
+                <div class="regioes">1 - Sudeste (R$1,20) &nbsp;|&nbsp; 2 - Sul (R$1,30) &nbsp;|&nbsp; 3 - Centro-Oeste (R$1,50)</div>
+
+                <label for="km">Distância (km)</label>
+                <input type="number" id="km" placeholder="Ex: 120">
+
+                <label for="qt">Quantidade de peças</label>
+                <input type="number" id="qt" placeholder="Ex: 500">
+
+                <label for="rast">Deseja Rastreamento? </label>
+                <input type="number" id="rast" placeholder="Digite o número correspondente">
+                <div class="regioes">1 - Sim (+ R$200) &nbsp;|&nbsp; 2 - Não</div>
+
+                <label for="litro">Preço do litro de combustível (R$)</label>
+                <input type="number" id="litro" placeholder="Ex: 5.89">
+
+                <div class="botoes">
+                    <button id="btnAdicionar" onclick="calcularRes()">Adicionar Pedido</button>
+                    <button id="btnRelatorio" onclick="gerarRelatorio()">Ver Relatório</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Pedidos cadastrados</h3>
+                <ul id="listaPedidos"></ul>
+            </div>
+
+            <div class="card" id="textoResultado">
+                <h3>Relatório</h3>
+                <p>O relatório aparecerá aqui.</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
