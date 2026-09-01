@@ -3,13 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Frete - Múltiplos Pedidos</title>
+    <title>Exercício 4</title>
     <link rel="stylesheet" href="../estilo/estilo.css">
     <script src="../script/script.js" defer></script>
 </head>
 
 <body>
-    <!-- Menu Superior Corrigido -->
     <nav class="navbar">
         <ul class="nav-links">
             <li><a href="index.html">Exercício 1</a></li>
@@ -23,38 +22,44 @@
 
     <main class="content-wrapper">
         <div class="container">
-            <h2>Exercício 04 - Sistema de Reservas de Hotel com Tarifas Dinâmicas</h2>
+            <h2>Exercício 4 – Reservas de Hotel com Tarifas Dinâmicas</h2>
             <div class="card">
-                <h3>Novo pedido</h3>
+                <h3>Nova reserva</h3>
 
-                <label for="codigo">Código do pedido</label>
+                <label for="codigo">Código da reserva</label>
                 <input type="number" id="codigo" placeholder="Ex: 1001">
 
-                <label for="regiao">Região</label>
-                <input type="number" id="regiao" placeholder="Digite o número correspondente">
-                <div class="regioes">1 - Sudeste (R$1,20) &nbsp;|&nbsp; 2 - Sul (R$1,30) &nbsp;|&nbsp; 3 - Centro-Oeste (R$1,50)</div>
+                <label for="tipoQuarto">Tipo de quarto</label>
+                <input type="text" id="tipoQuarto" placeholder="S, L ou P" maxlength="1">
+                <div class="regioes">S - Standard (100%) | L - Luxo (150%) | P - Premium (200%)</div>
 
-                <label for="km">Distância (km)</label>
-                <input type="number" id="km" placeholder="Ex: 120">
+                <label for="temporada">Temporada</label>
+                <input type="text" id="temporada" placeholder="B, A ou F" maxlength="1">
+                <div class="regioes">B - Baixa | A - Alta (+25%) | F - Feriado (+40%)</div>
 
-                <label for="qt">Quantidade de peças</label>
-                <input type="number" id="qt" placeholder="Ex: 500">
+                <label for="diarias">Quantidade de diárias</label>
+                <input type="number" id="diarias" placeholder="Ex: 3">
 
-                <label for="rast">Deseja Rastreamento? </label>
-                <input type="number" id="rast" placeholder="Digite o número correspondente">
-                <div class="regioes">1 - Sim (+ R$200) &nbsp;|&nbsp; 2 - Não</div>
+                <label for="hospedes">Número de hóspedes</label>
+                <input type="number" id="hospedes" placeholder="Ex: 2">
 
-                <label for="litro">Preço do litro de combustível (R$)</label>
-                <input type="number" id="litro" placeholder="Ex: 5.89">
+                <label for="cafe">Café da manhã incluso?</label>
+                <input type="text" id="cafe" placeholder="S ou N" maxlength="1">
+
+                <label for="valorBase">Valor base da diária padrão (R$)</label>
+                <input type="number" id="valorBase" placeholder="Ex: 250.00">
+
+                <label for="valorCafe">Valor do café por hóspede/dia (R$)</label>
+                <input type="number" id="valorCafe" placeholder="Ex: 25.00">
 
                 <div class="botoes">
-                    <button id="btnAdicionar" onclick="calcularRes()">Adicionar Pedido</button>
-                    <button id="btnRelatorio" onclick="gerarRelatorio()">Ver Relatório</button>
+                    <button id="btnAdicionar" onclick="calcularResEx4()">Adicionar Reserva</button>
+                    <button id="btnRelatorio" onclick="gerarRelatorioEx4()">Ver Relatório</button>
                 </div>
             </div>
 
             <div class="card">
-                <h3>Pedidos cadastrados</h3>
+                <h3>Reservas cadastradas</h3>
                 <ul id="listaPedidos"></ul>
             </div>
 

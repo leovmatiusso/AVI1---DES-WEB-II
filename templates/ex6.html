@@ -3,16 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Frete - Múltiplos Pedidos</title>
+    <title>Exercício 6</title>
     <link rel="stylesheet" href="../estilo/estilo.css">
     <script src="../script/script.js" defer></script>
 </head>
 
 <body>
-    <!-- Menu Superior Corrigido -->
     <nav class="navbar">
         <ul class="nav-links">
-            <li><a href="index.html" class="active">Exercício 1</a></li>
+            <li><a href="index.html">Exercício 1</a></li>
             <li><a href="ex2.html">Exercício 2</a></li>
             <li><a href="ex3.html">Exercício 3</a></li>
             <li><a href="ex4.html">Exercício 4</a></li>
@@ -23,38 +22,40 @@
 
     <main class="content-wrapper">
         <div class="container">
-            <h2>Exercício 6 - Sistema de Vendas com Comissões, Metas e Performance</h2>
+            <h2>Exercício 6 – Vendas com Comissões, Metas e Performance</h2>
             <div class="card">
-                <h3>Novo pedido</h3>
+                <h3>Nova venda</h3>
 
-                <label for="codigo">Código do pedido</label>
+                <label for="codigo">Código da venda</label>
                 <input type="number" id="codigo" placeholder="Ex: 1001">
 
-                <label for="regiao">Região</label>
+                <label for="codVendedor">Código do vendedor</label>
+                <input type="text" id="codVendedor" placeholder="Ex: V-01">
+
+                <label for="regiao">Região da loja</label>
                 <input type="number" id="regiao" placeholder="Digite o número correspondente">
-                <div class="regioes">1 - Sudeste (R$1,20) &nbsp;|&nbsp; 2 - Sul (R$1,30) &nbsp;|&nbsp; 3 - Centro-Oeste (R$1,50)</div>
+                <div class="regioes">1 - Norte | 2 - Nordeste | 3 - Sudeste | 4 - Sul</div>
 
-                <label for="km">Distância (km)</label>
-                <input type="number" id="km" placeholder="Ex: 120">
+                <label for="valorVenda">Valor da venda (R$)</label>
+                <input type="number" id="valorVenda" placeholder="Ex: 850.00">
 
-                <label for="qt">Quantidade de peças</label>
-                <input type="number" id="qt" placeholder="Ex: 500">
+                <label for="tipoCliente">Tipo de cliente</label>
+                <input type="text" id="tipoCliente" placeholder="PF ou PJ">
 
-                <label for="rast">Deseja Rastreamento? </label>
-                <input type="number" id="rast" placeholder="Digite o número correspondente">
-                <div class="regioes">1 - Sim (+ R$200) &nbsp;|&nbsp; 2 - Não</div>
+                <label for="percBase">Percentual base de comissão (%)</label>
+                <input type="number" id="percBase" placeholder="Ex: 5">
 
-                <label for="litro">Preço do litro de combustível (R$)</label>
-                <input type="number" id="litro" placeholder="Ex: 5.89">
+                <label for="meta">Meta mensal de vendas por vendedor (R$)</label>
+                <input type="number" id="meta" placeholder="Ex: 10000">
 
                 <div class="botoes">
-                    <button id="btnAdicionar" onclick="calcularRes()">Adicionar Pedido</button>
-                    <button id="btnRelatorio" onclick="gerarRelatorio()">Ver Relatório</button>
+                    <button id="btnAdicionar" onclick="calcularResEx6()">Adicionar Venda</button>
+                    <button id="btnRelatorio" onclick="gerarRelatorioEx6()">Ver Relatório</button>
                 </div>
             </div>
 
             <div class="card">
-                <h3>Pedidos cadastrados</h3>
+                <h3>Vendas cadastradas</h3>
                 <ul id="listaPedidos"></ul>
             </div>
 

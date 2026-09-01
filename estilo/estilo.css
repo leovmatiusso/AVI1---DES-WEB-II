@@ -21,29 +21,26 @@ body {
     min-height: 100vh;
 }
 
-/* Ajuste da Barra de Navegação Superior */
 .navbar {
     width: 100%;
-    background-color: #1a252f; /* Azul escuro elegante */
+    background-color: #1a252f;
     padding: 15px 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center; /* Centraliza a lista de exercícios */
+    justify-content: center;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
-
 .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
-    flex-wrap: wrap; /* Caso a tela encolha muito, os itens quebram linha */
+    flex-wrap: wrap;
     justify-content: center;
 }
-
 .nav-links a {
-    color: #bdc3c7; /* Cor cinza clara para links inativos */
+    color: #bdc3c7;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
@@ -51,19 +48,15 @@ body {
     border-radius: 6px;
     transition: all 0.3s ease;
 }
-
-/* Efeito Hover (Passar o mouse) */
 .nav-links a:hover {
     color: #ffffff;
-    background-color: #34495e; /* Fundo levemente mais claro */
+    background-color: #34495e;
 }
-
 .nav-links a.active {
     color: #ffffff;
-    background-color: var(--azul); /* Fundo azul destacado igual o botão */
+    background-color: var(--azul);
 }
 
-/* Container do Conteúdo Principal */
 .content-wrapper {
     display: flex;
     justify-content: center;

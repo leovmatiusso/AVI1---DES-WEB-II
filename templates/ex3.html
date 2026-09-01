@@ -3,13 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Frete - Múltiplos Pedidos</title>
+    <title>Exercício 3</title>
     <link rel="stylesheet" href="../estilo/estilo.css">
     <script src="../script/script.js" defer></script>
 </head>
 
 <body>
-    <!-- Menu Superior Corrigido -->
     <nav class="navbar">
         <ul class="nav-links">
             <li><a href="index.html">Exercício 1</a></li>
@@ -23,38 +22,37 @@
 
     <main class="content-wrapper">
         <div class="container">
-            <h2>Exercício 3 - Sistema de Controle de Produção com Estoque e Relatórios</h2>
+            <h2>Exercício 3 – Controle de Produção com Estoque</h2>
             <div class="card">
-                <h3>Novo pedido</h3>
+                <h3>Nova ordem de produção</h3>
 
-                <label for="codigo">Código do pedido</label>
+                <label for="codigo">Código da ordem</label>
                 <input type="number" id="codigo" placeholder="Ex: 1001">
 
-                <label for="regiao">Região</label>
-                <input type="number" id="regiao" placeholder="Digite o número correspondente">
-                <div class="regioes">1 - Sudeste (R$1,20) &nbsp;|&nbsp; 2 - Sul (R$1,30) &nbsp;|&nbsp; 3 - Centro-Oeste (R$1,50)</div>
+                <label for="codProduto">Código do produto</label>
+                <input type="text" id="codProduto" placeholder="Ex: P-500">
 
-                <label for="km">Distância (km)</label>
-                <input type="number" id="km" placeholder="Ex: 120">
+                <label for="tipo">Tipo de produto</label>
+                <input type="number" id="tipo" placeholder="Digite o número correspondente">
+                <div class="regioes">1 - Padrão | 2 - Premium (+10%) | 3 - Sob encomenda (+20%)</div>
 
-                <label for="qt">Quantidade de peças</label>
-                <input type="number" id="qt" placeholder="Ex: 500">
+                <label for="qt">Quantidade produzida</label>
+                <input type="number" id="qt" placeholder="Ex: 300">
 
-                <label for="rast">Deseja Rastreamento? </label>
-                <input type="number" id="rast" placeholder="Digite o número correspondente">
-                <div class="regioes">1 - Sim (+ R$200) &nbsp;|&nbsp; 2 - Não</div>
+                <label for="custoBase">Custo unitário base (R$)</label>
+                <input type="number" id="custoBase" placeholder="Ex: 12.50">
 
-                <label for="litro">Preço do litro de combustível (R$)</label>
-                <input type="number" id="litro" placeholder="Ex: 5.89">
+                <label for="estoqueInicial">Estoque inicial do produto</label>
+                <input type="number" id="estoqueInicial" placeholder="Ex: 4500">
 
                 <div class="botoes">
-                    <button id="btnAdicionar" onclick="calcularRes()">Adicionar Pedido</button>
-                    <button id="btnRelatorio" onclick="gerarRelatorio()">Ver Relatório</button>
+                    <button id="btnAdicionar" onclick="calcularResEx3()">Adicionar Ordem</button>
+                    <button id="btnRelatorio" onclick="gerarRelatorioEx3()">Ver Relatório</button>
                 </div>
             </div>
 
             <div class="card">
-                <h3>Pedidos cadastrados</h3>
+                <h3>Ordens cadastradas</h3>
                 <ul id="listaPedidos"></ul>
             </div>
 
